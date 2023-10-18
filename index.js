@@ -122,15 +122,9 @@ run().catch(console.dir);
 
 
 app.get('/', (req, res) => {
-    res.send('food and baverage brand server is running')
+    res.send('food and baverage brand server is running now!')
 })
 
 app.listen(port, () => {
     console.log(`server is running on port: ${port}`);
 })
-
-
-
-
-// FlavorFusion
-// 8U1bhG0dwLJ3cvzw
