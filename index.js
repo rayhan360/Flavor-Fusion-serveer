@@ -29,6 +29,7 @@ async function run() {
     // await client.connect();
 
     const productCollection = client.db('productDB').collection('product')
+    const cartCollection = client.db('productDB').collection('cartData')
 
     // read operation
     app.get('/product', async (req, res) => {
@@ -43,6 +44,16 @@ async function run() {
         console.log(newProduct);
 
         const result = await productCollection.insertOne(newProduct)
+        res.send(result)
+    })
+
+
+    // add cart product 
+    app.post('/cart', async (req, res) => {
+        const newCart = req.body;
+        console.log(newCart);
+
+        const result = await cartCollection.insertOne(newCart)
         res.send(result)
     })
 
